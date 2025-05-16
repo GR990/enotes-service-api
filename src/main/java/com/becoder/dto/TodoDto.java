@@ -3,23 +3,23 @@ package com.becoder.dto;
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryDto {
+@Getter
+@Setter
+public class TodoDto {
 
 	private Integer id;
 
-	private String name;
+	private String title;
 
-	private String description;
-
-	private Boolean isActive;
+	private StatusDto status;
 
 	private Integer createdBy;
 
@@ -28,4 +28,14 @@ public class CategoryDto {
 	private Integer updatedBy;
 
 	private Date updatedOn;
+
+	@Builder
+	@AllArgsConstructor
+	@NoArgsConstructor
+	@Getter
+	@Setter
+	public static class StatusDto {
+		private Integer id;
+		private String name;
+	}
 }

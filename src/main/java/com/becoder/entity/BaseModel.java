@@ -16,20 +16,20 @@ import lombok.Setter;
 @Setter
 @MappedSuperclass
 public abstract class BaseModel {
+	
+	@CreatedBy
+	@Column(updatable = false)
+	private Integer createdBy;
 
-    @CreatedBy
-    @Column(updatable = false)
-    private Integer createdBy;
+	@CreatedDate
+	@Column(updatable = false)
+	private Date createdOn;
 
-    @CreatedDate
-    @Column(updatable = false)
-    private Date createdOn;
+	@LastModifiedBy
+	@Column(insertable = false)
+	private Integer updatedBy;
 
-    @LastModifiedBy
-    @Column(insertable = false)
-    private Integer updatedBy;
-
-    @LastModifiedDate
-    @Column(insertable = false)
-    private Date updatedOn;
+	@LastModifiedDate
+	@Column(insertable = false)
+	private Date updatedOn;
 }

@@ -1,20 +1,19 @@
 package com.becoder.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.becoder.dto.NotesDto.CategoryDto;
 
-@Getter
-@Setter
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryResponse {
+@Data
+public class NotesRequest {
 
-	private Integer id;
-
-	private String name;
+	private String title;
 
 	private String description;
 
+	private CategoryDto category;
 }
