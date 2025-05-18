@@ -6,18 +6,16 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.becoder.entity.Category;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface CategoryRepository extends JpaRepository<Category, Integer> {
+public interface CategoryRepository extends JpaRepository<Category, Integer>{
 
-    List<Category> findByIsActiveTrueAndIsDeletedFalse();
+	List<Category> findByIsActiveTrueAndIsDeletedFalse();
 
-    Optional<Category> findByIdAndIsDeletedFalse(Integer id);
+	Optional<Category> findByIdAndIsDeletedFalse(Integer id);
 
-    List<Category> findByIsDeletedFalse();
+	List<Category> findByIsDeletedFalse();
 
-    Boolean existsByName(String name);
+	Boolean existsByName(String name);
 
 
 }

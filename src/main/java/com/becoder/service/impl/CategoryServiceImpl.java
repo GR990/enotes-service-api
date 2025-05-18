@@ -43,7 +43,7 @@ public class CategoryServiceImpl implements CategoryService {
 		// Validation Checking
 		validation.categoryValidation(categoryDto);
 
-		// check category exists or not
+		// check category exist or not
 		Boolean exist = categoryRepo.existsByName(categoryDto.getName().trim());
 		if (exist) {
 			// throw error
